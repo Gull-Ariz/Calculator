@@ -30,48 +30,44 @@ public class MainActivity extends AppCompatActivity {
         output = (EditText) findViewById(R.id.output);
     }
 
-    public void showSeven(View view) {
-        input.setText(input.getText() + "7");
-    }
-
-    public void showEight(View view) {
-        input.setText(input.getText() + "8");
-    }
-
-    public void showNine(View view) {
-        input.setText(input.getText() + "9");
-    }
-
-    public void showFour(View view) {
-        input.setText(input.getText() + "4");
-    }
-
-    public void showFive(View view) {
-        input.setText(input.getText() + "5");
-    }
-
-    public void showSix(View view) {
-        input.setText(input.getText() + "6");
-    }
-
-    public void showOne(View view) {
-        input.setText(input.getText() + "1");
-    }
-
-    public void showTwo(View view) {
-        input.setText(input.getText() + "2");
-    }
-
-    public void showThree(View view) {
-        input.setText(input.getText() + "3");
-    }
-
-    public void showZero(View view) {
-        input.setText(input.getText() + "0");
-    }
-
-    public void showPoint(View view) {
-        input.setText(input.getText() + ".");
+    public void showcharacter(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.btn0:
+                input.setText(input.getText() + "0");
+                break;
+            case R.id.btn1:
+                input.setText(input.getText() + "1");
+                break;
+            case R.id.btn2:
+                input.setText(input.getText() + "2");
+                break;
+            case R.id.btn3:
+                input.setText(input.getText() + "3");
+                break;
+            case R.id.btn4:
+                input.setText(input.getText() + "4");
+                break;
+            case R.id.btn5:
+                input.setText(input.getText() + "5");
+                break;
+            case R.id.btn6:
+                input.setText(input.getText() + "6");
+                break;
+            case R.id.btn7:
+                input.setText(input.getText() + "7");
+                break;
+            case R.id.btn8:
+                input.setText(input.getText() + "8");
+                break;
+            case R.id.btn9:
+                input.setText(input.getText() + "9");
+                break;
+            case R.id.point:
+                input.setText(input.getText() + ".");
+                break;
+        }
     }
 
     public void clearAll(View view) {
@@ -106,59 +102,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-    public void doDivision(View view) {
-
-        if(input == null )
+    public void operator(View view)
+    {
+        if(input == null || input.toString() == "")
         {
             input.setText("");
         }
         else
         {
             value1 = Double.parseDouble(input.getText()+"");
-            div = true;
-            input.setText(null);
-        }
-
-    }
-
-    public void doMultiplication(View view) {
-        if(input == null)
-        {
-            input.setText("");
-        }
-        else
-        {
-            value1 = Double.parseDouble(input.getText()+"");
-            mul = true;
-            input.setText(null);
-        }
-    }
-
-    public void doSubtraction(View view) {
-        if(input == null )
-        {
-            input.setText("");
-        }
-        else
-        {
-            value1 = Double.parseDouble(input.getText()+"");
-            sub = true;
-            input.setText(null);
-        }
-    }
-
-    public void doAddition(View view) {
-        if(input == null )
-        {
-            input.setText("");
-        }
-        else
-        {
-            value1 = Double.parseDouble(input.getText()+"");
-            add = true;
-            input.setText(null);
+            switch (view.getId())
+            {
+                case R.id.plus:
+                    add = true;
+                    input.setText(null);
+                    break;
+                case R.id.minus:
+                    sub = true;
+                    input.setText(null);
+                    break;
+                case R.id.mul:
+                    mul = true;
+                    input.setText(null);
+                    break;
+                case R.id.divide:
+                    div = true;
+                    input.setText(null);
+                    break;
+            }
         }
     }
 }
